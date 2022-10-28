@@ -10,12 +10,12 @@ const port = process.env.PORT || 3000   //check environment called Port, if this
 //console.info(`port = ${port}`)
 
 // Create an instance of express application
-const app = express()
+const app = express()   //application framework for node.js
 
-// Log all request
-app.use(morgan('common'))
+// Log/ accept all request
+app.use(morgan('common'))   
 
-// GET / 
+// accept by GET method 
 app.get('/', (req, resp) => {
     // what is the media type
     // return HTML content
@@ -24,7 +24,7 @@ app.get('/', (req, resp) => {
     // set the status code
     resp.status(200)
 
-    // send the response
+    // send the response - display
     resp.send(`<h1>The current time is now ${new Date()}</h1><img src="/assets/blackcat.jpg">`)
 })
 
