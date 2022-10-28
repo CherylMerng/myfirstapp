@@ -25,8 +25,11 @@ app.get('/', (req, resp) => {
     resp.status(200)
 
     // send the response
-    resp.send(`<h1>The current time is now ${new Date()}</h1>`)
+    resp.send(`<h1>The current time is now ${new Date()}</h1><img src="/assets/blackcat.jpg">`)
 })
+
+// Serve static resource
+app.use("/assets", express.static(__dirname + "/static"))
 
 // Start our web application
 app.listen(port, () => {
